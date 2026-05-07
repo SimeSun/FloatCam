@@ -1,0 +1,189 @@
+/* ==========================================================================
+   AICamera - 紧凑图标式工具栏主题
+   ========================================================================== */
+
+* {
+    /* 字体由 main.py 按平台 QApplication.setFont 设置，避免 QSS 引用本机不存在的字体名 */
+    font-size: 13px;
+    color: #e6e9ef;
+}
+
+/* ---------- 浮动面板背景（工具栏 / 弹出面板） ---------- */
+#ToolPanel {
+    background-color: rgba(28, 32, 42, 235);
+    border: 1px solid rgba(78, 92, 122, 90);
+    border-radius: 14px;
+}
+
+/* ---------- 图标按钮（统一规格） ---------- */
+#IconButton {
+    background-color: rgba(58, 66, 90, 120);
+    border: 1px solid rgba(78, 92, 122, 60);
+    border-radius: 9px;
+    padding: 0;
+}
+#IconButton:hover {
+    background-color: rgba(95, 110, 145, 160);
+    border-color: rgba(120, 140, 180, 120);
+}
+#IconButton:pressed {
+    background-color: rgba(50, 58, 82, 220);
+}
+#IconButton:checked {
+    background-color: #3a82f7;
+    border-color: #3a82f7;
+}
+#IconButton:checked:hover {
+    background-color: #4f93ff;
+    border-color: #4f93ff;
+}
+
+/* ---------- 工具栏内的小竖向分隔条 ---------- */
+#VSep {
+    background-color: rgba(120, 140, 180, 80);
+    border: none;
+}
+
+/* ---------- 下拉框 / 弹出列表 ---------- */
+QComboBox {
+    background-color: rgba(48, 56, 76, 230);
+    border: 1px solid rgba(78, 92, 122, 90);
+    border-radius: 7px;
+    padding: 6px 10px;
+    min-height: 22px;
+    color: #e6e9ef;
+}
+QComboBox:hover { border-color: rgba(120, 140, 180, 160); }
+QComboBox::drop-down { border: none; width: 22px; }
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #b8bdc9;
+    margin-right: 8px;
+}
+QComboBox QAbstractItemView {
+    background-color: #2a3041;
+    border: 1px solid #3d445a;
+    selection-background-color: #3a82f7;
+    selection-color: #ffffff;
+    outline: 0;
+    padding: 4px;
+}
+
+QComboBox#CompactCombo {
+    font-size: 10px;
+    padding: 2px 6px;
+    min-height: 18px;
+    border-radius: 6px;
+}
+QComboBox#CompactCombo::drop-down {
+    border: none;
+    width: 0;
+}
+QComboBox#CompactCombo::down-arrow {
+    image: none;
+    border: none;
+    width: 0;
+    height: 0;
+}
+QComboBox#CompactCombo QAbstractItemView {
+    font-size: 10px;
+    padding: 2px;
+}
+
+/* macOS：相机弹层用 QToolButton+QMenu；箭头与 QComboBox::down-arrow 同款小号三角 */
+QToolButton#CompactMenuButton {
+    font-size: 10px;
+    background-color: rgba(48, 56, 76, 230);
+    border: 1px solid rgba(78, 92, 122, 90);
+    border-radius: 6px;
+    padding: 2px 16px 2px 8px;
+    min-height: 18px;
+    color: #e6e9ef;
+    text-align: left;
+}
+QToolButton#CompactMenuButton:hover {
+    border-color: rgba(120, 140, 180, 160);
+}
+QToolButton#CompactMenuButton::menu-indicator {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 0;
+    height: 0;
+    margin-right: 8px;
+    image: none;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid #b8bdc9;
+}
+
+/* 相机设置专用菜单：与紧凑按钮同字号，避免系统菜单偏大、偏粗 */
+QMenu#CameraPopupMenu {
+    font-size: 10px;
+}
+QMenu#CameraPopupMenu::item {
+    padding: 4px 14px 4px 10px;
+    border-radius: 4px;
+}
+QMenu#CameraPopupMenu::item:selected {
+    background-color: #3a82f7;
+    color: #ffffff;
+}
+
+/* ---------- 普通按钮（备用） ---------- */
+QPushButton {
+    background-color: #353c50;
+    border: 1px solid #424a61;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #e6e9ef;
+}
+QPushButton:hover  { background-color: #404863; }
+QPushButton:pressed{ background-color: #2c3346; }
+QPushButton:disabled {
+    background-color: #2a3041;
+    color: #6b7384;
+    border-color: #2f3547;
+}
+
+/* ---------- SeekBar ---------- */
+QSlider::groove:horizontal {
+    border: none;
+    height: 6px;
+    background: rgba(70, 80, 105, 200);
+    border-radius: 3px;
+}
+QSlider::sub-page:horizontal {
+    background: #3a82f7;
+    border-radius: 3px;
+}
+QSlider::handle:horizontal {
+    background: #ffffff;
+    border: none;
+    width: 8px;
+    height: 8px;
+    margin: -1px 0;
+    border-radius: 4px;
+}
+QSlider::handle:horizontal:hover { background: #f4f7ff; }
+
+/* ---------- 右键菜单 ---------- */
+QMenu {
+    background-color: #232836;
+    border: 1px solid #353c50;
+    border-radius: 6px;
+    padding: 4px;
+    color: #e6e9ef;
+}
+QMenu::item {
+    padding: 6px 16px;
+    border-radius: 4px;
+}
+QMenu::item:selected {
+    background-color: #3a82f7;
+    color: #ffffff;
+}
+
+QLabel { color: #e6e9ef; }
+QMessageBox { background-color: #232836; }

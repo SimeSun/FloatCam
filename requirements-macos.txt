@@ -1,0 +1,11 @@
+# 安装命令：pip install -r requirements-macos.txt
+# 启用原生 AVFoundation 采集 + Center Stage，并把内置 FaceTime 相机作为默认设备
+# （否则会回退到 OpenCV CAP_AVFOUNDATION，无法可靠选中 FaceTime 相机）。
+-r requirements.txt
+pyobjc-core>=10.0
+pyobjc-framework-AVFoundation>=10.0
+pyobjc-framework-CoreMedia>=10.0
+# CoreVideo 符号在 pyobjc 10+ 通过 Quartz 伞模块暴露
+pyobjc-framework-Quartz>=10.0
+# dispatch_queue_create / DISPATCH_QUEUE_SERIAL 在 pyobjc 10+ 由 libdispatch 提供
+pyobjc-framework-libdispatch>=10.0

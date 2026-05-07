@@ -1,0 +1,5 @@
+PyQt5>=5.15.9
+opencv-python>=4.8.0
+# OpenCV wheels are built against NumPy 1.x ABI; NumPy 2.x breaks cv2 import until a matching wheel.
+numpy>=1.24.0,<2
+pygrabber>=0.2; sys_platform == "win32"
